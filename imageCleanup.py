@@ -14,14 +14,14 @@ def move_jpeg_files(source_folder, destination_folder):
     # List all files in the source folder
     files = os.listdir(source_folder)
 
-    # Iterate through the files and move .jpeg files to the destination folder
+    # Iterate through the files and move .jpeg and png files to the destination folder
     for file in files:
         if file.lower().endswith((".jpeg", ".png")):
             source_path = os.path.join(source_folder, file)
             destination_path = os.path.join(destination_folder, file)
             try:
                 shutil.move(source_path, destination_path)
-                print(f"Moved '{file}' to '{destination_folder}'.")
+                #print(f"Moved '{file}' to '{destination_folder}'.")
             except Exception as e:
                 print(f"Error moving '{file}': {str(e)}")
 
